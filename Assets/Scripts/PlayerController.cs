@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Public Variable to assign player ID in the Inspector
+    public string inputID;
     //Private Variables
     private float speed = 15.0f;
     private float turnSpeed = 30.0f;
@@ -17,8 +19,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // This is where we get player input
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal" + inputID);
+        verticalInput = Input.GetAxis("Vertical" + inputID);
         // Moves the vehicle forward based on vertical input
         transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
         // Rotates the vehicle based on horizontal input
