@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PropellerSpinX : MonoBehaviour
+public class ForwardCarsMovement : MonoBehaviour
 {
-    private float speed = 500.0f;
+    public float speed = 15.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,7 +12,8 @@ public class PropellerSpinX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //making propeller to spin around the Z-axis
-        transform.Rotate(Vector3.forward * speed * Time.deltaTime);
+        //Making the obstacle cars to move forward
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        
     }
 }
